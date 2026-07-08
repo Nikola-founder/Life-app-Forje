@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-fraunces: "Fraunces", serif;
+  --font-inter: "Inter", sans-serif;
+  --font-plex-mono: "IBM Plex Mono", monospace;
+}
+
+html,
+body {
+  background-color: #ede3d3;
+  color: #3a2a1e;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(184, 135, 90, 0.06), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(123, 75, 50, 0.05), transparent 45%);
+  min-height: 100vh;
+}
+
+/* Signature element: stitched-leather divider, used under headers
+   throughout the app as the visual "spine" of the ledger. */
+.stitch-divider {
+  position: relative;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    #b8875a 0,
+    #b8875a 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  opacity: 0.6;
+}
+
+.card {
+  background-color: #fbf6ed;
+  border: 1px solid #e0d2be;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(58, 42, 30, 0.08), 0 1px 2px rgba(58, 42, 30, 0.06);
+}
+
+.btn-primary {
+  background-color: #7b4b32;
+  color: #fbf6ed;
+  border-radius: 10px;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+  background-color: #5b3623;
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: #7b4b32;
+  border: 1px solid #d8b98c;
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease;
+}
+.btn-ghost:hover {
+  background-color: #f1e6d6;
+}
+
+.input-field {
+  background-color: #fffdf9;
+  border: 1px solid #e0d2be;
+  border-radius: 10px;
+  padding: 0.55rem 0.8rem;
+  color: #3a2a1e;
+  width: 100%;
+}
+.input-field:focus {
+  outline: 2px solid #b8875a;
+  outline-offset: 1px;
+}
+
+.wax-seal {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 30%, #a35c3a, #5b3623 75%);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.25), 0 2px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f1e6d6;
+  font-family: var(--font-fraunces);
+  font-weight: 600;
+}
+
+::selection {
+  background-color: #d8b98c;
+  color: #3a2a1e;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
